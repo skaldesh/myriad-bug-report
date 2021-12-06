@@ -38,10 +38,17 @@ void inferenceRoutine(std::string model_path, std::string config_path) {
     std::vector<float> confs;
     std::vector<cv::Rect> boxes;
 
+    int count = 0;
     try {
         while (!interrupted()) {
             // Do inference.
             dm.detect(input, classIDs, confs, boxes);
+            count++;
+
+	        if (count >= 100) {
+                std::cout << "Finished inference for 100 frames" << std::endl;
+                count = 0;
+            }
         }
     } catch (const std::exception& e) {
         std::cout << "Exception in inference routine: " << std::string(e.what()) << std::endl;
