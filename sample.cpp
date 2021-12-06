@@ -8,15 +8,19 @@
 #include <thread>
 #include <atomic>
 #include <csignal>
+#include <chrono>
 
 #include <opencv2/imgproc.hpp>
 #include <opencv2/core.hpp>
 #include <opencv2/dnn/dnn.hpp>
 
 // How many VPU devices should be used.
-#define NUM_VPUS 1
+#define NUM_VPUS 3
+
+using namespace std::chrono_literals;
 
 std::atomic<bool> interrupt = {false};
+std::atomic<uint> fpsCount  = {0};
 
 void interruptHandler(int signum) {
     interrupt = true;
@@ -25,6 +29,14 @@ void interruptHandler(int signum) {
 
 bool interrupted() {
     return interrupt;
+}
+
+void fpsRoutine() {
+    std::cout << "FPS: ";
+    while (!interrupted()) {
+        std::this_thread::sleep_for(1s);
+        std::cout << std::to_string(fpsCount.exchange(0)) << ", " << std::flush;
+    }
 }
 
 void inferenceRoutine(std::string model_path, std::string config_path) {
@@ -38,17 +50,11 @@ void inferenceRoutine(std::string model_path, std::string config_path) {
     std::vector<float> confs;
     std::vector<cv::Rect> boxes;
 
-    int count = 0;
     try {
         while (!interrupted()) {
             // Do inference.
             dm.detect(input, classIDs, confs, boxes);
-            count++;
-
-	        if (count >= 100) {
-                std::cout << "Finished inference for 100 frames" << std::endl;
-                count = 0;
-            }
+            fpsCount++;
         }
     } catch (const std::exception& e) {
         std::cout << "Exception in inference routine: " << std::string(e.what()) << std::endl;
@@ -60,13 +66,15 @@ int main(int argc, char* argv[]) {
     signal(SIGINT, interruptHandler);
     signal(SIGTERM, interruptHandler);
 
-    // Spawn inference routines.
+    // Spawn routines.
+    auto fpsThread = std::thread(fpsRoutine);
     std::vector<std::thread> infThreads;
     for (int i = 0; i < NUM_VPUS; ++i) {
         infThreads.push_back(std::thread(inferenceRoutine, "/model.bin", "/model.xml"));
     }
 
     // Wait until all threads have exited.
+    fpsThread.join();
     for (int i = 0; i < NUM_VPUS; ++i) {
         infThreads[i].join();
     }
