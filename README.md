@@ -1,5 +1,5 @@
 # Issue
-After some time the inference fails with the error message `NC_Error`.
+After some time the inference fails with the error message `Exception in inference routine: Failed to queue inference: NC_ERROR`.
 
 # Docker environment
 Using the official OpenVINO docker image `ubuntu20_dev:latest`  
