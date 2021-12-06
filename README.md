@@ -37,7 +37,9 @@ You can detach from the container with `Ctrl+p` followed by `Ctrl+q`
 
 ## Example error logs
 See the files `errorlog1.txt` and `errorlog2.txt` for sample output.  
-The logs stem from different systems with the same configuration
+The logs stem from different systems, but with the same board configuration:
+- UP Core Plus (Atom QuadCore, 4GB RAM, 64GB Storage)
+- UP Vision Plus X (3 Myriads)
 
 ## Model
 The model is a [pretrained model from the OpenVINO model zoo](https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/person-detection-0200)
