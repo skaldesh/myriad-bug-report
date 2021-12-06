@@ -1,0 +1,11 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
+set (CMAKE_CXX_STANDARD 11)
+PROJECT("Myriad Bug Report")
+
+# OpenCV
+set(OpenCV_DIR /opt/intel/openvino_2021.4.752/opencv/cmake)
+FIND_PACKAGE(OpenCV REQUIRED)
+INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
+
+ADD_EXECUTABLE(sample sample.cpp)
+TARGET_LINK_LIBRARIES(sample pthread ${OpenCV_LIBS})

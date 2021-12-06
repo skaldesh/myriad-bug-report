@@ -1,0 +1,94 @@
+E: [global] [    728069] [Scheduler00Thr] dispatcherEventSend:62	Write failed -4
+
+E: [xLink] [    728070] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    728070] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    728070] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    728070] [sample] addEvent:358	Condition failed: event->header.flags.bitField.ack != 1
+E: [global] [    728070] [sample] addEventWithPerf:372	 addEvent(event, timeoutMs) method call failed with an error: 3
+E: [global] [    728070] [sample] XLinkReadData:156	Condition failed: (addEventWithPerf(&event, &opTime, 0xFFFFFFFF))
+E: [ncAPI] [    728071] [sample] ncFifoReadElem:3295	Packet reading is failed.
+E: [global] [    728072] [sample] addEvent:358	Condition failed: event->header.flags.bitField.ack != 1
+E: [global] [    728072] [sample] addEventWithPerf:372	 addEvent(event, timeoutMs) method call failed with an error: 3
+E: [global] [    728072] [sample] XLinkReadData:156	Condition failed: (addEventWithPerf(&event, &opTime, 0xFFFFFFFF))
+E: [ncAPI] [    728072] [sample] getGraphMonitorResponseValue:1902	XLink error, rc: X_LINK_ERROR
+E: [ncAPI] [    728072] [sample] ncGraphQueueInference:3458	Can't get trigger response
+E: [global] [    728132] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    728132] [Scheduler00Thr] sendEvents:1132	Event sending failed
+Exception in inference routine: Failed to queue inference: NC_ERROR
+Exception in inference routine: Failed to read output from FIFO: NC_ERROR
+E: [global] [    728136] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    728136] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    728136] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    728136] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    728136] [sample] addEvent:358	Condition failed: event->header.flags.bitField.ack != 1
+E: [global] [    728136] [sample] addEventWithPerf:372	 addEvent(event, timeoutMs) method call failed with an error: 3
+E: [global] [    728136] [sample] XLinkReadData:156	Condition failed: (addEventWithPerf(&event, &opTime, 0xFFFFFFFF))
+E: [ncAPI] [    728136] [sample] getGraphMonitorResponseValue:1902	XLink error, rc: X_LINK_ERROR
+E: [global] [    728137] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    728137] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    728137] [sample] addEvent:358	Condition failed: event->header.flags.bitField.ack != 1
+E: [global] [    728137] [sample] addEventWithPerf:372	 addEvent(event, timeoutMs) method call failed with an error: 3
+E: [global] [    728137] [sample] XLinkReadData:156	Condition failed: (addEventWithPerf(&event, &opTime, 0xFFFFFFFF))
+E: [ncAPI] [    728137] [sample] getGraphMonitorResponseValue:1902	XLink error, rc: X_LINK_ERROR
+E: [global] [    728137] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_CLOSE_STREAM_REQ
+
+E: [xLink] [    728137] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    728137] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    728137] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    728137] [sample] addEvent:358	Condition failed: event->header.flags.bitField.ack != 1
+E: [global] [    728137] [sample] addEventWithPerf:372	 addEvent(event, timeoutMs) method call failed with an error: 3
+E: [global] [    728137] [sample] XLinkReadData:156	Condition failed: (addEventWithPerf(&event, &opTime, 0xFFFFFFFF))
+E: [ncAPI] [    728137] [sample] getGraphMonitorResponseValue:1902	XLink error, rc: X_LINK_ERROR
+E: [global] [    728138] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    728138] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    728138] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    728139] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    728139] [sample] addEvent:358	Condition failed: event->header.flags.bitField.ack != 1
+E: [global] [    728139] [sample] addEventWithPerf:372	 addEvent(event, timeoutMs) method call failed with an error: 3
+E: [global] [    728139] [sample] XLinkReadData:156	Condition failed: (addEventWithPerf(&event, &opTime, 0xFFFFFFFF))
+E: [ncAPI] [    728139] [sample] getGraphMonitorResponseValue:1902	XLink error, rc: X_LINK_ERROR
+E: [global] [    728140] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    728140] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    728140] [sample] addEvent:358	Condition failed: event->header.flags.bitField.ack != 1
+E: [global] [    728140] [sample] addEventWithPerf:372	 addEvent(event, timeoutMs) method call failed with an error: 3
+E: [global] [    728140] [sample] XLinkReadData:156	Condition failed: (addEventWithPerf(&event, &opTime, 0xFFFFFFFF))
+E: [ncAPI] [    728140] [sample] getGraphMonitorResponseValue:1902	XLink error, rc: X_LINK_ERROR
+E: [global] [    728140] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_CLOSE_STREAM_REQ
+
+E: [xLink] [    728140] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    728140] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    728140] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    728140] [sample] addEvent:358	Condition failed: event->header.flags.bitField.ack != 1
+E: [global] [    728140] [sample] addEventWithPerf:372	 addEvent(event, timeoutMs) method call failed with an error: 3
+E: [global] [    728140] [sample] XLinkReadData:156	Condition failed: (addEventWithPerf(&event, &opTime, 0xFFFFFFFF))
+E: [ncAPI] [    728140] [sample] getGraphMonitorResponseValue:1902	XLink error, rc: X_LINK_ERROR
+E: [global] [    729132] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    729132] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    730132] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    730132] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    731131] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    731131] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    732131] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    732131] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    733131] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    733131] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    734131] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
+E: [xLink] [    734131] [Scheduler00Thr] sendEvents:1132	Event sending failed
+E: [global] [    735130] [Scheduler00Thr] dispatcherEventSend:54	Write failed (header) (err -4) | event XLINK_WRITE_REQ
+
