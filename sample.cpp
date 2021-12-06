@@ -32,10 +32,19 @@ bool interrupted() {
 }
 
 void fpsRoutine() {
+    // Print 11 times the fps counter, then append a newline.
     std::cout << "FPS: ";
+    int count = 0;
     while (!interrupted()) {
         std::this_thread::sleep_for(1s);
-        std::cout << std::to_string(fpsCount.exchange(0)) << ", " << std::flush;
+        count++;
+        std::cout << std::to_string(fpsCount.exchange(0));
+        if (count > 10) {
+            std::cout << std::endl << std::flush;
+            count = 0;
+        } else {
+            std::cout << ", " << std::flush;
+        }
     }
 }
 
