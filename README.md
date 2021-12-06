@@ -2,7 +2,7 @@
 After some time the inference fails with the error message `Exception in inference routine: Failed to queue inference: NC_ERROR`.
 
 # Docker environment
-Using the official OpenVINO docker image `ubuntu20_dev:latest`  
+Using the official OpenVINO docker image `ubuntu20_dev:2021.4.2`  
 The command that was used binds the myriad device to the container and runs the container in privileged mode:  
 ```
 docker run \
@@ -21,7 +21,7 @@ docker run \
     --log-opt tag="{{.Name}}" \
     --privileged \
     -u root:root \
-    openvino/ubuntu20_dev:latest \
+    openvino/ubuntu20_dev:2021.4.2 \
         /bin/bash
 ```
 
