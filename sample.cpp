@@ -14,9 +14,6 @@
 #include <opencv2/core.hpp>
 #include <opencv2/dnn/dnn.hpp>
 
-// How many VPU devices should be used.
-#define NUM_VPUS 3
-
 using namespace std::chrono_literals;
 
 std::atomic<bool> interrupt = {false};
@@ -75,16 +72,22 @@ int main(int argc, char* argv[]) {
     signal(SIGINT, interruptHandler);
     signal(SIGTERM, interruptHandler);
 
+    if (argc < 2) {
+        std::cout << "Usage: sample <num-vpus>" << std::endl;
+        return 1;
+    }
+    int numVPUs = atoi(argv[1]);
+
     // Spawn routines.
     auto fpsThread = std::thread(fpsRoutine);
     std::vector<std::thread> infThreads;
-    for (int i = 0; i < NUM_VPUS; ++i) {
+    for (int i = 0; i < numVPUs; ++i) {
         infThreads.push_back(std::thread(inferenceRoutine, "/model.bin", "/model.xml"));
     }
 
     // Wait until all threads have exited.
     fpsThread.join();
-    for (int i = 0; i < NUM_VPUS; ++i) {
+    for (int i = 0; i < numVPUs; ++i) {
         infThreads[i].join();
     }
 
